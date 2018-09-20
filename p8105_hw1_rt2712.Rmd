@@ -22,11 +22,16 @@ sample = runif(n = 10, min = 0, max = 5)
 ## Step 3
 Create dataframe called "problem1_df"
 ``` {r dataframe}
+
+vec_logical = sample > 2
+vec_char = c("i", "made", "this", "character", "vector", "with", "length", "of", "ten", "yay")
+vec_factor = factor(c("a", "a", "a", "a", "b", "b", "b", "b", "a", "b"))
+
 problem1_df = tibble(
-  vec_sample = c(sample),
-  vec_logical = sample > 2,
-  vec_char = c("i", "made", "this", "character", "vector", "with", "length", "of", "ten", "yay"),
-  vec_factor = factor(c("a", "a", "a", "a", "b", "b", "b", "b", "a", "b"))
+  sample,
+  vec_logical,
+  vec_char,
+  vec_factor
   )
 
 ```
@@ -34,3 +39,12 @@ Here is the data frame:
 ``` {r echo = FALSE}
 problem1_df
 ```
+
+## Step 4
+Can you take the mean?
+-----------------------
+* sample: yes, I can take the mean because it is a numerical vector
+* vec_logical: yes, I can take the mean because R assigns TRUE and FALSE values of 1 and 0
+* vec_char: no, I cannot take the mean because the vector is not numerical
+* vec_factor: no, see above
+
