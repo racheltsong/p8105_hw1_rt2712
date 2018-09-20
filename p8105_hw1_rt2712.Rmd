@@ -48,3 +48,25 @@ Can you take the mean?
 * vec_char: no, I cannot take the mean because the vector is not numerical
 * vec_factor: no, see above
 
+## Step 5
+Test what happens when you convert variables to a different type
+```{r eval = FALSE}
+as.numeric(vec_logical)
+as.numeric(vec_char)
+as.numeric(vec_factor)
+```
+What happens?
+--------------
+* vec_logical converted to 1/0 for T/F
+* vec_char changed to NA 
+* vec_factor converted to 1/2 for a/b
+
+
+```{r}
+as.numeric(as.factor(vec_char))
+as.numeric(as.character(vec_factor))
+```
+What happens?
+---------------
+* Converting the character vector to a factor vector alphabetizes the vector, and converting this into a numeric vector assigns values to the elements based on this alphabetical order
+* Converting the character vector to a factor vector to a numeric vector cannot be done because a character vector cannot be converted to a numeric vector
