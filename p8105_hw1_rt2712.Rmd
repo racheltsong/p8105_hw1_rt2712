@@ -5,4 +5,16 @@ date: "2018-21-09"
 output: github_document
 ---
 
+# Problem 1
 
+## Step 1
+Load tidyverse 
+``` {r eval = FALSE}
+library(tidyverse)
+```
+
+## Step 2
+Create a random sample of size 10 from a uniform [0,5] distribution called "sample" 
+``` {r} 
+sample = runif(n = 10, min = 0, max = 5)
+```
