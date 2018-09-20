@@ -1,0 +1,8 @@
+---
+title: "Homework 1"
+author: "Rachel Tsong"
+date: "2018-21-09"
+output: github_document
+---
+
+
