@@ -40,7 +40,6 @@ Here is the data frame:
 problem1_df
 ```
 
-## Step 4
 Can you take the mean?
 -----------------------
 * sample: yes, I can take the mean because it is a numerical vector
@@ -48,7 +47,7 @@ Can you take the mean?
 * vec_char: no, I cannot take the mean because the vector is not numerical
 * vec_factor: no, see above
 
-## Step 5
+## Step 4
 Test what happens when you convert variables to a different type
 ```{r eval = FALSE}
 as.numeric(vec_logical)
@@ -68,8 +67,8 @@ as.numeric(as.character(vec_factor))
 ```
 What happens?
 ---------------
-* Converting the character vector to a factor vector alphabetizes the vector, and converting this into a numeric vector assigns values to the elements based on this alphabetical order
-* Converting the character vector to a factor vector to a numeric vector cannot be done because a character vector cannot be converted to a numeric vector
+* Converting the character vector to a factor vector alphabetizes the vector, and converting this into a numeric vector assigns values to the cases based on this alphabetical order
+* Converting the character vector to a factor vector to a numeric vector creates a vector where all cases become NA
 
 
 
@@ -101,4 +100,23 @@ problem2_df
 
 The size of the data set is `r dim(problem2_df)`. The variable x has a mean `r mean(x)` and median `r median(x)`. The proportion of cases for which the logical vector sum_xy is true is `r sum(sum_xy) * (1/1000)`.
 
+## Step 2
+Make scatterplots of y vs x
+```{r echo = TRUE, fig.keep = 'all'}
+plot_df = tibble(x, y)
 
+ggplot(plot_df, aes(x = x, y = y, color = sum_xy)) + geom_point()
+
+ggplot(plot_df, aes(x = x, y = y, color = sum_xy_numeric)) + geom_point()
+
+ggplot(plot_df, aes(x = x, y = y, color = sum_xy_factor)) + geom_point()
+
+```
+
+For the logical and factor vector, the plots just have 2 colors for each of the 2 options, but for the numeric vector, the values are assigned to a color gradient.
+
+## Step 3
+Save first scatterplot
+```{r}
+ggsave("hw1_scatterplot.pdf", ggplot(plot_df, aes(x = x, y = y, color = sum_xy)) + geom_point())
+```
