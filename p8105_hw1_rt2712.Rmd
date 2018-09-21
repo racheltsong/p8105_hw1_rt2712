@@ -70,3 +70,31 @@ What happens?
 ---------------
 * Converting the character vector to a factor vector alphabetizes the vector, and converting this into a numeric vector assigns values to the elements based on this alphabetical order
 * Converting the character vector to a factor vector to a numeric vector cannot be done because a character vector cannot be converted to a numeric vector
+
+
+
+# Problem 2
+
+## Step 1
+Create dataframe 
+```{r}
+x = rnorm(1000, 0 , 1)
+y = rnorm(1000, 0 , 1)
+sum_xy = x + y > 0
+sum_xy_numeric = as.numeric(sum_xy)
+sum_xy_factor = as.factor(sum_xy)
+
+problem2_df = tibble(
+  x,
+  y,
+  sum_xy,
+  sum_xy_factor,
+  sum_xy_numeric
+)
+
+```
+
+Here is the data frame:
+```{r echo = FALSE}
+problem2_df
+```
