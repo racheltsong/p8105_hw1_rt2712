@@ -98,3 +98,7 @@ Here is the data frame:
 ```{r echo = FALSE}
 problem2_df
 ```
+
+The size of the data set is `r dim(problem2_df)`. The variable x has a mean `r mean(x)` and median `r median(x)`. The proportion of cases for which the logical vector sum_xy is true is `r sum(sum_xy) * (1/1000)`.
+
+
